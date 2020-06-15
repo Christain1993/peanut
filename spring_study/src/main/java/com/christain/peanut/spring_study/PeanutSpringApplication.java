@@ -11,6 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.EnvironmentAware;
+import org.springframework.core.convert.ConversionService;
 import org.springframework.core.env.Environment;
 
 
@@ -50,6 +51,9 @@ public class PeanutSpringApplication implements EnvironmentAware , ApplicationRu
         log.info("peanutConfig {}", peanutConfig);
 
         log.info("peanutProperties {} ", context.getBean(PeanutProperties.class));
+        ConversionService bean = (ConversionService) context.getBean("conversionService");
+        System.out.println(bean);
+
 
     }
 

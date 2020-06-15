@@ -5,3 +5,8 @@ peanut:
     - lol
     - read
     - basketball
+  period: 99
+
+
+server:
+  port: 9090

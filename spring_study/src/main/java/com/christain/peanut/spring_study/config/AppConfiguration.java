@@ -7,11 +7,29 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
+import org.springframework.context.support.ConversionServiceFactoryBean;
+import org.springframework.core.convert.ConversionService;
+import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.type.AnnotationMetadata;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Configuration
 @Import({AppConfiguration.Registrar.class})
 public class AppConfiguration {
+
+    // 自定义全局convert , 映射配置文件时 , 可以使用
+    @Bean
+    public ConversionService conversionService() {
+        ConversionServiceFactoryBean bean = new ConversionServiceFactoryBean();
+        Set<Converter> converters = new HashSet<>();
+        converters.add(new IntegerToPeriodConverter());
+        bean.setConverters(converters);
+        bean.afterPropertiesSet();
+        return bean.getObject();
+    }
+
     @Bean
     public PeanutConfig registerPeanutConfig(){
         PeanutConfig peanutConfig = new PeanutConfig();

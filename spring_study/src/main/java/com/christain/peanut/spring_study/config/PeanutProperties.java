@@ -1,5 +1,6 @@
 package com.christain.peanut.spring_study.config;
 
+import com.christain.peanut.common.domain.Period;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -16,6 +17,7 @@ public class PeanutProperties {
     private String name;
     private Integer age;
     private List<String> like;
+    private Period period;
 
 }
 

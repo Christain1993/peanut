@@ -3,9 +3,6 @@ package com.christain.peanut.common.domain;
 import lombok.Data;
 
 @Data
-public class Peanut {
-    private String name;
+public class Period {
     private Integer age;
-
-    private Period period;
 }
