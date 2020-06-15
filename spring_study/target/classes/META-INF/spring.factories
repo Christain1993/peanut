@@ -1,0 +1,7 @@
+org.springframework.context.ApplicationListener=\
+  com.christain.peanut.spring_study.listeners.PeanutListener,\
+  com.christain.peanut.spring_study.listeners.TomatoListener
+
+org.springframework.context.ApplicationContextInitializer=\
+  com.christain.peanut.spring_study.initializer.PeanutInitializer
+
